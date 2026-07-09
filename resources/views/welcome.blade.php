@@ -194,8 +194,8 @@ footer{padding:2.5rem 5rem;border-top:1px solid var(--border);display:flex;justi
     <li><a href="#testimonials">Stories</a></li>
   </ul>
   <div class="nav-right">
-    <a href="#" class="nav-login">Sign in</a>
-    <a href="#signup" class="nav-btn">Get started</a>
+    <a href="{{ route('login') }}" class="nav-login">Sign in</a>
+    <a href="{{ route('register') }}" class="nav-btn">Get started</a>
   </div>
 </nav>
 
@@ -205,8 +205,8 @@ footer{padding:2.5rem 5rem;border-top:1px solid var(--border);display:flex;justi
     <h1>Africa's <em>talent.</em><br><span class="muted">The world's work.</span></h1>
     <p class="hero-desc">AfriLance connects Africa's most skilled freelancers with global clients. Powered by AI matching, instant local payments, and zero commission to start.</p>
     <div class="hero-btns">
-      <a href="#signup" class="btn-dark">Start as a freelancer</a>
-      <a href="#signup" class="btn-outline">Hire talent →</a>
+      <a href="{{ route('register') }}" class="btn-dark">Start as a freelancer</a>
+      <a href="{{ route('register') }}" class="btn-outline">Hire talent →</a>
     </div>
     <div class="hero-stats">
       <div><span class="stat-val">54+</span><span class="stat-lbl">Countries</span></div>
