@@ -47,3 +47,55 @@ input:focus,select:focus{border-color:var(--gold)}
             <label for="name">Full name</label>
             <input type="text" id="name" name="name" value="{{ old('name') }}" required autofocus>
             @error('name')<div class="error">{{ $message }}</div>@enderror
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" value="{{ old('email') }}" required>
+            @error('email')<div class="error">{{ $message }}</div>@enderror
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            @error('password')<div class="error">{{ $message }}</div>@enderror
+        </div>
+
+        <div class="form-group">
+            <label for="password_confirmation">Confirm password</label>
+            <input type="password" id="password_confirmation" name="password_confirmation" required>
+        </div>
+
+        <div class="form-group">
+            <label>I want to</label>
+            <div class="role-grid">
+                <div class="role-option selected" onclick="selectRole(this, 'freelancer')">
+                    <input type="radio" name="role" value="freelancer" checked>
+                    <div class="role-icon">💼</div>
+                    <div class="role-title">Find Work</div>
+                    <div class="role-desc">I am a freelancer</div>
+                </div>
+                <div class="role-option" onclick="selectRole(this, 'client')">
+                    <input type="radio" name="role" value="client">
+                    <div class="role-icon">🏢</div>
+                    <div class="role-title">Hire Talent</div>
+                    <div class="role-desc">I am a client</div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn">Create my AfriLance account</button>
+
+        <div class="login-link">Already have an account? <a href="{{ route('login') }}">Sign in →</a></div>
+    </form>
+</div>
+
+<script>
+function selectRole(el, role) {
+    document.querySelectorAll('.role-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    el.querySelector('input[type=radio]').checked = true;
+}
+</script>
+</body>
+</html>
