@@ -6,8 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up(): void
-    {
+    public function up(): : void
+{
+    if (!Schema::hasTable('jobs')) {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('client_id')->constrained('users')->onDelete('cascade');
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->timestamps();
         });
     }
+}
 
     public function down(): void
     {
