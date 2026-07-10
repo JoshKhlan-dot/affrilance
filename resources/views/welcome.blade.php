@@ -185,6 +185,42 @@ footer{padding:2.5rem 5rem;border-top:1px solid var(--border);display:flex;justi
 </style>
 </head>
 <body>
+    <script>
+// Currency rates relative to USD
+const rates = {
+    USD: 1,
+    KES: 129.5,
+    NGN: 1580,
+    GHS: 15.2,
+    ZAR: 18.4,
+    EGP: 48.9,
+    TZS: 2680,
+    UGX: 3750,
+    RWF: 1320,
+    ETB: 56.8,
+    MAD: 9.9,
+    GBP: 0.79,
+    EUR: 0.92,
+    SEK: 10.3,
+    CHF: 0.89
+};
+
+const symbols = {
+    USD:'$', KES:'KSh', NGN:'₦', GHS:'₵', ZAR:'R',
+    EGP:'E£', TZS:'TSh', UGX:'USh', RWF:'RWF',
+    ETB:'Br', MAD:'MAD', GBP:'£', EUR:'€', SEK:'kr', CHF:'CHF'
+};
+
+function switchCurrency(currency) {
+    localStorage.setItem('afrilance_currency', currency);
+    location.reload();
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('afrilance_currency') || 'USD';
+    document.getElementById('currency-selector').value = saved;
+});
+</script>
 
 <nav>
   <a href="#" class="logo">Afri<span>Lance</span></a>
@@ -194,6 +230,23 @@ footer{padding:2.5rem 5rem;border-top:1px solid var(--border);display:flex;justi
     <li><a href="#testimonials">Stories</a></li>
   </ul>
   <div class="nav-right">
+    <select id="currency-selector" onchange="switchCurrency(this.value)" style="padding:5px 10px;border:1px solid var(--border);border-radius:5px;font-size:0.8rem;font-family:'Inter',sans-serif;color:var(--ink);background:#fff;cursor:pointer">
+    <option value="USD">🌍 USD</option>
+    <option value="KES">🇰🇪 KES</option>
+    <option value="NGN">🇳🇬 NGN</option>
+    <option value="GHS">🇬🇭 GHS</option>
+    <option value="ZAR">🇿🇦 ZAR</option>
+    <option value="EGP">🇪🇬 EGP</option>
+    <option value="TZS">🇹🇿 TZS</option>
+    <option value="UGX">🇺🇬 UGX</option>
+    <option value="RWF">🇷🇼 RWF</option>
+    <option value="ETB">🇪🇹 ETB</option>
+    <option value="MAD">🇲🇦 MAD</option>
+    <option value="GBP">🇬🇧 GBP</option>
+    <option value="EUR">🇩🇪 EUR</option>
+    <option value="SEK">🇸🇪 SEK</option>
+    <option value="CHF">🇨🇭 CHF</option>
+</select>
     <a href="{{ route('login') }}" class="nav-login">Sign in</a>
     <a href="{{ route('register') }}" class="nav-btn">Get started</a>
   </div>
