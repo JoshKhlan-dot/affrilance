@@ -66,7 +66,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg2);color:var(--ink)}
     <a href="/" class="logo">Afri<span>Lance</span></a>
     <div class="topbar-right">
         <span class="topbar-name">Welcome back, <strong>{{ $user->name }}</strong></span>
-        <a href="#" class="btn-sm btn-outline">Find Jobs</a>
+        <a href="{{ route('jobs.index') }}" class="btn-sm btn-outline">Find Jobs</a>
         <form method="POST" action="{{ route('logout') }}" style="display:inline">
             @csrf
             <button type="submit" class="btn-sm btn-outline">Logout</button>
@@ -79,7 +79,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg2);color:var(--ink)}
         <div class="sidebar-section">
             <span class="sidebar-label">Main</span>
             <a href="#" class="sidebar-link active"><span class="sidebar-icon">◆</span> Dashboard</a>
-            <a href="#" class="sidebar-link"><span class="sidebar-icon">◆</span> Find Jobs</a>
+            <a href="{{ route('jobs.index') }}" class="sidebar-link"><span class="sidebar-icon">◆</span> Find Jobs</a>
             <a href="#" class="sidebar-link"><span class="sidebar-icon">◆</span> My Proposals</a>
             <a href="#" class="sidebar-link"><span class="sidebar-icon">◆</span> Active Work</a>
         </div>

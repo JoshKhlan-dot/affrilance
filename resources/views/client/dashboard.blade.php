@@ -73,7 +73,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg2);color:var(--ink)}
         <div class="sidebar-section">
             <span class="sidebar-label">Main</span>
             <a href="#" class="sidebar-link active"><span class="sidebar-icon">◆</span> Dashboard</a>
-            <a href="#" class="sidebar-link"><span class="sidebar-icon">◆</span> Post a Job</a>
+            <a href="{{ route('jobs.create') }}" class="sidebar-link"><span class="sidebar-icon">◆</span> Post a Job</a>
             <a href="#" class="sidebar-link"><span class="sidebar-icon">◆</span> My Jobs</a>
             <a href="#" class="sidebar-link"><span class="sidebar-icon">◆</span> Proposals</a>
             <a href="#" class="sidebar-link"><span class="sidebar-icon">◆</span> Find Talent</a>
