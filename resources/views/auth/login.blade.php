@@ -42,13 +42,13 @@ input:focus{border-color:var(--gold)}
 
         <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" id="email" name="email" value="{{ old('email') }}" required autofocus>
+            <input type="email" id="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="email">
             @error('email')<div class="error">{{ $message }}</div>@enderror
         </div>
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required autocomplete="current-password">
             @error('password')<div class="error">{{ $message }}</div>@enderror
         </div>
 
