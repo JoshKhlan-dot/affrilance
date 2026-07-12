@@ -80,7 +80,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg2);color:var(--ink)}
             <span class="sidebar-label">Main</span>
             <a href="#" class="sidebar-link active"><span class="sidebar-icon">◆</span> Dashboard</a>
             <a href="{{ route('jobs.index') }}" class="sidebar-link"><span class="sidebar-icon">◆</span> Find Jobs</a>
-            <a href="#" class="sidebar-link"><span class="sidebar-icon">◆</span> My Proposals</a>
+            <a href="{{ route('proposals.my') }}" class="sidebar-link"><span class="sidebar-icon">◆</span> My Proposals</a>
             <a href="#" class="sidebar-link"><span class="sidebar-icon">◆</span> Active Work</a>
         </div>
         <div class="sidebar-section">

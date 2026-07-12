@@ -115,8 +115,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg2);color:var(--ink)}
                     <span class="info-val">{{ ucfirst($job->status) }}</span>
                 </div>
 
-                <a href="#" class="btn-apply">Submit a Proposal →</a>
-            </div>
+                <
+            </div>a href="{{ route('proposals.create', $job) }}" class="btn-apply">Submit a Proposal →</a>
         </div>
     </div>
 </div>
